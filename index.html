@@ -7,15 +7,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Poppins', sans-serif;
       color: #333;
-      background: linear-gradient(135deg, #ffe6f0, #fff0f5); 
+      background: linear-gradient(135deg, #ffe6f0, #fff0f5);
       overflow-x: hidden;
       position: relative;
       min-height: 100vh;
@@ -38,27 +34,52 @@
       to { transform: translate3d(100px,-50px,0); }
     }
 
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      width: 10px; height: 10px;
+      background: pink;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: floatHeart 8s linear infinite;
+    }
+
+    @keyframes floatHeart {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+      100% { transform: translateY(-600px) rotate(360deg); opacity: 0; }
+    }
+
     /* Container */
     .container {
       position: relative;
       max-width: 700px;
       margin: 80px auto;
       padding: 40px;
-      background: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.85);
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(255,192,203,0.3);
       z-index: 1;
+      animation: float 6s ease-in-out infinite alternate;
     }
 
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+
+    /* Heading */
     h1 {
       font-family: 'Pacifico', cursive;
       text-align: center;
       margin-bottom: 30px;
-      color: #ff69b4;
-      text-shadow: 0 2px 5px rgba(255,105,180,0.4);
       font-size: 2.8rem;
+      background: linear-gradient(90deg, #ff69b4, #ffb6c1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 5px rgba(255,105,180,0.2);
     }
 
+    /* Paragraphs */
     p {
       font-size: 1.3rem;
       line-height: 1.9;
@@ -97,7 +118,14 @@
 
     .download-btn:hover {
       transform: scale(1.08);
-      box-shadow: 0 8px 25px rgba(255,105,180,0.6);
+      box-shadow: 0 8px 25px rgba(255,105,180,0.6), 0 0 15px rgba(255,192,203,0.8) inset;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
     }
   </style>
 </head>
@@ -105,31 +133,106 @@
 
   <div class="mist"></div>
 
-  <div class="container fade-in">
-    <h1>Birthday Paragraph</h1>
-    <p>
-      <!-- WRITE YOUR PARAGRAPH HERE -->
-      Welcome to my cute pastel page! Here you can write your story, thoughts, or diary entries. The soft pink gradient and floating mist make the page look sweet and playful.
-    </p>
-    <p>
-      You can add more paragraphs. Each paragraph will fade in smoothly as you scroll, giving a gentle and magical reading experience.
-    </p>
-    <p>
-      Replace this text with your own content. Make it fun, soft, and full of positivity!
-    </p>
-    <p>
-      Replace this text with your own content. Make it fun, soft, and full of positivity!
-    </p>
-    <p>
-      Replace this text with your own content. Make it fun, soft, and full of positivity!
+  <!-- Floating hearts -->
+  <script>
+    for(let i=0;i<30;i++){
+      let heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random()*100 + 'vw';
+      heart.style.animationDuration = 5 + Math.random()*5 + 's';
+      heart.style.width = 5 + Math.random()*10 + 'px';
+      heart.style.height = heart.style.width;
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <div class="container">
+    <h1 class="fade-in">Birthday Paragraph</h1>
+
+    <!-- Placeholder paragraphs (editable) -->
+    <p class="fade-in">
+      ....🌸👭 Best Sis 4Ever 🌍✨....
+
+E jae asithibaru thank you.... Mo efforts bekar jaini.. mu janini... au once again Happy Birthday 🎂...
+Tadaaa.... 
+Mane thiba tu thare call kare pacharithilu kn karuchhu mu kahithili ki code lekhuchii.... Ta se time re e sabu hin karuthili.... Jetebele fanka hue basi aku hin kare ...... 😁😁... Au mu agaru kahuchhi ki eita gote bahut lamba au bada paragraph te please please please ignore karibuni... au patience ra saha jemiti padhu agaru ebe bi semiti padhibu please.... request karuchhi aji dinare ta skip maribuni.... hau.. padhe au.. sorry jadi tate abhitaru kichhi na bhala lagile... au sabha last ku download button re click kariki e note ku download bi kari paribu... nahele continue au...
     </p>
 
-    <!-- BUTTONS CONTAINER -->
-    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 30px;">
-      <!-- WHATSAPP BUTTON -->
-      <a href="https://api.whatsapp.com/send?phone=917853802801" target="_blank" class="download-btn">Download</a>
+       <p class="fade-in">
+Hau chhada e sabu.... 
+Bodhe mu 1st time lekhiba start karithili ei dina mane to birthday re ..... Au aji jae jaha tike hela asi to pakhare nahele note....... Au thank you... thank you.... thank you.. thank you ..........thank you... thank you... thank you ...
+</p>
 
-      <!-- NEW BUTTON -->
+      <p class="fade-in">
+Tate jete thank you kahile bi kam haba bodhe ki kn.... Mu ebe kemiti kn explain karibi kn kahibi.. kn lekhibi kichhi jani paruniii...... Mundare ta bahut katha chalichhi kou katha kn lekhibi kn kahibi.... Jani paruni.... Bass mu etiki chahunchhi ki tora au mora bond sabudina pain bhala rahu..
+</p>
+  <p class="fade-in">
+ Ei kichhi dina haba dui jana bhitare kichhi ta restriction asichhi mate jaha laguchhi.... Kejani kn pain hauchhi... Tu kahinki kahuchi emiti janini tathapi.... Kichhi ta jinisa bhabiki hin karithibu jaha laguchhi..... Satare tu emiti kou jinisa mana kale ki naa kahile... satare mate bahut awkward Lage .... Bahut mane bahut.... 
+</p>
+  <p class="fade-in">
+Eita sata.... To saha je kounasi jinisa hau na kahinki....katha hele se jete bakwaas au asana jinisa ki jete kharap jinisa bisayare katha hele jaha lageni kintu to pakharu naa au mana kariba jinisa sunile mo deha re jaeni bahut awkward Lage..... 
+</p>
+  <p class="fade-in">
+Karana tu asiba purbaru mu bodhe sabu jagare NAAA au RESTRICTION emiti suni asuthili.... Bass to pakhare hin se freedom paili kichhi bi kahiba au kou katha re naa na suniba.... Dhara mu kou chhota jinisa bisayare janini ... Seita mu kahaku kuheni....
+</p>
+  <p class="fade-in">
+ Satare kahaku kahu nathilu se doubt semiti thae karana mu kahile samaste hasibe au kete kn kahibe... Even mo sanga mananku bi pachareni.... Karana mate lage ki mu kahile pare sei katha ku nei chideibe ki kn karibe.... Emiti bahut katha thae jouthi mu bahut jinisa jani pareni... Jani pareni karana mu semananka bhali samastanka saha misini..... Ki misi pareni.... 
+</p>
+  <p class="fade-in">
+Ta pare bi na jani pariki pacharile emiti hasibe.... Ki majak karibe.... Ta pare 11th re ..... To saha dekha heli... Tu rakhi purnima re keteta pilanka hatare rakhi bandhilu..... Tanka bhitaru peon au mo saha ..... Ete Kain misilu jani ni.....  
+</p>
+  <p class="fade-in">
+Au baki agaku ku Tora mora katha ..... ete misigale eia seia..... Taku lekhibi kn tu ta sabu janichhu ta apekhya mu au kn lekhuchhi..... Ebe kaha ... Tu mate ete support karuchhu kebe mo katha re naa karinu.... Jouthi mu freedom paili kichhi bi kahibaku kichhi bi karibaku.....
+</p>
+  <p class="fade-in">
+ Jie mate kebe judge na kariba..... Ta semitika pila mo agare tike badali gale nijaku kemiti lagiba je.... Nije kaha..... Chhada  semitika dina au kebe asiba janini..... Bass hope ki sabu bhala heijiba.....
+</p>
+  <p class="fade-in">
+Tu hin bodhe mo pain gote jaga JOU JAGARE MATE KEBE KOU JINISA RA RESTRICTION NAHIN SABU KICHHI KAHIBARA AU PACHARIBARA FREEDOM ACHHI AU JIE MATE KEBE JUDGE KARIBANI... athu best jaga kaha pain kn haba je??....  Au hmm SORRY ei kichhi mas haba mo pain tu bahut awkward feel karuchhu kete ta katha re..... 
+</p>
+  <p class="fade-in">
+Mora hin kichhi bhul thiba.... Au SORRY ki mu ajanata re to against ku palae mane Tate kouthi kn kahibu jani pareni kouta thik bhul..... Se sabu ku nei ragibuni... Please please please please please please..... Mu janini ame emiti kete din katha haba kete din contact re rahiba.... Ki ketedina ame emiti nija nijara daily katha share kariba .....
+</p>
+  <p class="fade-in">
+ Se je paryanta bi hau . Mu chahunchhi ki bhalare time spent kariba..... To mood jetebele bi kharap thae mo upare asi saridabu... kichhi nai.... etiki mane rakh kebe bi mo agare kichhi kahiba pain bhabibuni.,,..Au mu tate sabubele kahichhi au ebe bi kahuchhi ki... Kie thau na thau mu sabubele achhi to pakhare.... 
+</p>
+  <p class="fade-in">
+Au to birthday re mu tate kn debi je.... Jaha dele bi mate kam laguchhi.... Laguchhi esabu kichhi nuhn.... Tu kahithilu life is like a train journey..  au ame katha bi heithile ki kebe alaga habani eia seia.... 
+</p>
+  <p class="fade-in">
+Hele ebe bahut doubt re ruhe ki satare sabudine bhalare katha hei pariba?... Emiti sabudine sanga hei rahi pariba?... Daily emiti sabu katha share Kari pariba?... Na Mu kouthi kam efforts dauchhi ki jouthi pain ama bond dinaku din weak hei chalichhi?....Se jaha bi hau mu chahin bi ki se train re jete samay bi ruhe... 
+</p>
+  <p class="fade-in">
+Sabuthu adhika to saha time spent karibaku chahen..... Situation jete kharap hau na kahinki.... Au jebe bi time asiba ki tora au mo bond pura weak heigalani ki... Au na conversation achhi na kaha katha mane paduchhi ki na kn ....  Sedina sabu kichhi hareila bhali feel haba.....se time re kandi bi habani..... Ki kahi habani.... Ki sahi habani...... Bhitare bhitare marigala bhali lagiba..... 
+</p>
+  <p class="fade-in">
+Kichhi din gala pare emotionless heijibi.... Nije sedina sabu hope chhadidebi..... Duniya ku ta hisab re chalibaku debi..... Na kouthi efforts debi na kahaku kn kahibi.... Bass tike khaibaku au soibaku milile setiki.... 
+</p>
+  <p class="fade-in">
+Karana jebe mu efforts dauthili .....sabu jinisa re hope rakhuthili.... Nije kn gote kariba pain.... Chahun thili setebele universe sabu neigala mo thu..... Au puni e sabu karibi hin kahinki.... Au tu kahu ki sabu jinisa time fill up karidaba..... Jadi tu nije au hope re rahibuni ki time sabu thik karidaba...au chesta bi karibuni...Tahele...?!??... 
+</p>
+  <p class="fade-in">
+Chhada jaha bi haba.... Se time re... Jahabi kn. Mu ebe thu kahideli ki jadi semiti hela tahele mu emiti hebi..... Purba thara mu bhabi baku chahun nathili ki bhabi nathili.... Hele ebe feel kala belaku.... Bahut kasta..hue.... Ebe tu mo saha achhu..... Aga katha janini rahibu ki nahin... Hele ebe achhu ta mu khusi re achhi... Au jadi bi khusi na heli  kintu kebe mana dukha karibini... Au hmm.... 
+</p>
+  <p class="fade-in">
+To saha misila pare gote jhia ra kemiti bhabe seita bi jani paruchhi... Jouta samastanku janiba darkar.... Thank you mate e sabu sikheilu.....  Hele e sabu mora kn kama re asiba je... Jetebele mu to expectations au tate bujhi paruni..... Au tu nathile ta e sabu useless heijiba.... 
+</p>
+  <p class="fade-in">
+Kichhi nahin knowledge rakhibi e sabu ra... Au kn karibi... Au ame kebe puni dekha haba.... Kejani... Dekha hele bi bhalare kn katha hei pariba je?...  Last ku etiki kahibi au wish karibi.. ki ... No matter situation kete kharap hau... 
+</p>
+  <p class="fade-in">
+Tu mate kharap bhabeni..... Jemiti mu to agare..... Kharap na hue..... Tora etiki bharasa thau ki semitika kama mu kari nathibi..... Au ama duijanka bond ahuri strong hau.... Jemiti thila .... Ame jemiti kahuthile..... " Love thu bi bada." E katha kahiba au maniba jemiti..... 
+</p>
+  <p class="fade-in">
+Au ama bond strong haba pain please please... Same efforts de jaha dwara.... Amara bond dinaku dina ahuri strong haba.(Mu kahuni ki tu efforts daunu... Hele mu kahuchhi ki tu extra efforts au daunu .... To kahiba katha... Hele haba nahele nahin..).. 
+</p>
+  <p class="fade-in">
+kichhi nahin....eita mo wish.... Baki tu kn. Bhaithibi... E barsa kn karibu kn nain.... Tu se sabu wish kare .. to birthday re....Au puni thare thank you ete bata ete patience re rahiki padhichhu.... Au many many happy returns of the day.... Bhokololo Happy Birthday..🎂.. sabubele hasuthaa.... Au khusire raha ... 
+</p>
+
+    <!-- Buttons at the bottom -->
+    <div class="buttons fade-in">
+      <a href="https://drive.google.com/file/d/1q2xmQa1KTduU5VUntASXJ62_0KK0i1EB/view?usp=drivesdk" target="_blank" class="download-btn">Download</a>
       <a href="https://wa.me/917853802801" target="_blank" class="download-btn">Continue</a>
     </div>
   </div>
@@ -137,11 +240,7 @@
   <script>
     // Scroll fade-in
     const fadeEls = document.querySelectorAll('.fade-in');
-
-    const appearOptions = {
-      threshold: 0.1
-    };
-
+    const appearOptions = { threshold: 0.1 };
     const appearOnScroll = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if(entry.isIntersecting) {
@@ -150,10 +249,7 @@
         }
       });
     }, appearOptions);
-
-    fadeEls.forEach(el => {
-      appearOnScroll.observe(el);
-    });
+    fadeEls.forEach(el => appearOnScroll.observe(el));
   </script>
 </body>
 </html>
